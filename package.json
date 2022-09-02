@@ -3,8 +3,8 @@
   "homepage": "https://hishamss.github.io/micro-home/",
   "version": "1.0.0",
   "scripts": {
-    "predeploy": "npm run build", 
-    "deploy": "gh-pages -d build", 
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=3000 npx serve",
@@ -34,9 +34,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
+    "@uitk/react": "^2.0.1",
     "gh-pages": "^4.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "styled-components": "^5.3.5"
   }
 }
