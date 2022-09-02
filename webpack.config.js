@@ -47,8 +47,6 @@ module.exports = {
         reports: "reports@http://localhost:3001/remoteEntry.js"
       },
       exposes: {
-        "./Header": "./src/common/header",
-        "./Footer": "./src/common/footer"
       },
       shared: {
         ...deps,
