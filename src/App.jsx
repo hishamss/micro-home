@@ -7,9 +7,10 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Main from 'reports/Main';
+const RemoteComponent = React.lazy(() => {import('reports/Main')});
 import Home from './Home'
 import { Toolkit} from "@uitk/react";
+import ErrorBoundary from "./ErrorBoundary";
 
 import "./index.css";
 
@@ -20,7 +21,14 @@ const App = () => (
       <GlobalHeader />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/reports" element={<Main />} />
+        <Route path="/reports" element={
+        <React.Suspense fallback={<p>Loading remote component</p>}>
+          <ErrorBoundary module="Remote Component">
+          <RemoteComponent />
+          </ErrorBoundary>
+          
+          </React.Suspense>
+        } />
         <Route path="/*" element={<Home />} />
       </Routes>
       
