@@ -1,9 +1,10 @@
 import React from "react";
-import "./index.css";
+import styles from "./index.module.css";
 
 const Footer = () => {
     return (
-        <div className="common-footer">
+        // <div className={styles.common}>
+        <div className="shared-home-footer">
             Footer
         </div>
     );

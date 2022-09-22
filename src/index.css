@@ -9,6 +9,7 @@ body {
   text-align: center;
 }
 
-.home-container {
-  background-color: blue;
+.shared-home-footer {
+  color: grey;
+  background-color: antiquewhite;
 }

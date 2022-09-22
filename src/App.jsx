@@ -7,8 +7,13 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-const RemoteComponent = React.lazy(() => {import('reports/Main')});
-import Home from './Home'
+// add delay
+const RemoteComponent = React.lazy(() => {
+  return new Promise(resolve => {
+    setTimeout(() => resolve(import('reports/Main')),3000)
+  })
+  });
+import Home from './home'
 import { Toolkit} from "@uitk/react";
 import ErrorBoundary from "./ErrorBoundary";
 
@@ -22,7 +27,7 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/reports" element={
-        <React.Suspense fallback={<p>Loading remote component</p>}>
+        <React.Suspense fallback={<p>Loading remote component...</p>}>
           <ErrorBoundary module="Remote Component">
           <RemoteComponent />
           </ErrorBoundary>
